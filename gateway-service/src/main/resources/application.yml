@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: gateway-service
+  cloud:
+    gateway:
+      routes:
+        - id: product-microservice
+          uri: lb://product-microservice
+          predicates:
+            - Path=/products/**
+        - id: utilisateur-microservice
+          uri: lb://utilisateur-microservice
+          predicates:
+            - Path=/users/**
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/

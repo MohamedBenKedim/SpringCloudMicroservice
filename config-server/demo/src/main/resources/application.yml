@@ -1,0 +1,14 @@
+
+server:
+  port: 8888
+
+spring:
+  application:
+    name: application
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/MohamedBenKedim/SpringCloudMicroServiceTp
+          default-label: main
+          clone-on-start: true
